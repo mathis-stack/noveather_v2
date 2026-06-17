@@ -1,0 +1,139 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Noveather",
+  "image": "https://noveather.fr/logo.png",
+  "description": "Agence digitale en Guadeloupe - Création de sites web, référencement Google local, chatbots WhatsApp pour commerces indépendants",
+  "url": "https://noveather.fr",
+  "telephone": "+590691275457",
+  "email": "contact@noveather.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Guadeloupe",
+    "addressRegion": "Guadeloupe",
+    "postalCode": "97100",
+    "addressCountry": "FR",
+    "addressLocality": "Guadeloupe"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "16.2333",
+    "longitude": "-61.5333"
+  },
+  "areaServed": [
+    {
+      "@type": "AdministrativeArea",
+      "name": "Guadeloupe"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Pointe-à-Pitre"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Basse-Terre"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "Sainte-Anne"
+    }
+  ],
+  "service": [
+    {
+      "@type": "Service",
+      "@id": "https://noveather.fr/#service-website",
+      "name": "Création de Site Web",
+      "description": "Sites web professionnels, rapides et optimisés SEO pour la Guadeloupe. Livraison en 3-7 jours, design moderne et responsive mobile.",
+      "areaServed": "Guadeloupe",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://noveather.fr/#services"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://noveather.fr/#service-google",
+      "name": "Référencement Local Google Business",
+      "description": "Optimisation et gestion de votre fiche Google Business. Apparaissez dans les résultats locaux de Guadeloupe et attirez plus de clients.",
+      "areaServed": "Guadeloupe",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://noveather.fr/#services"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://noveather.fr/#service-chatbot",
+      "name": "Chatbot WhatsApp Automatisé",
+      "description": "Chatbots intelligents pour WhatsApp. Automatisez vos conversations, qualifiez les prospects et prenez les rendez-vous 24/7.",
+      "areaServed": "Guadeloupe",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://noveather.fr/#services"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://noveather.fr/#service-automation",
+      "name": "Automatisation Digitale",
+      "description": "Solutions d'automatisation pour votre commerce. Économisez du temps et augmentez vos ventes avec nos outils intégrés.",
+      "areaServed": "Guadeloupe",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://noveather.fr/#services"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://noveather.fr/#service-qrcode",
+      "name": "QR Codes et Cartes NFC",
+      "description": "Générez des QR codes et cartes NFC personnalisées pour diriger vos clients vers votre présence digitale.",
+      "areaServed": "Guadeloupe",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://noveather.fr/#services"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://noveather.fr/#service-audit",
+      "name": "Audit de Présence Digitale",
+      "description": "Audit gratuit de votre présence en ligne. Analyse complète et recommandations pour améliorer votre visibilité en Guadeloupe.",
+      "areaServed": "Guadeloupe",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://noveather.fr/#services"
+      }
+    }
+  ],
+  "priceRange": "€€",
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.facebook.com/noveather",
+    "https://www.instagram.com/noveather",
+    "https://twitter.com/noveather",
+    "https://www.linkedin.com/company/noveather"
+  ],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "Customer Service",
+    "telephone": "+590691275457",
+    "email": "contact@noveather.fr",
+    "areaServed": "Guadeloupe",
+    "availableLanguage": ["fr", "en"]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "ratingCount": "32",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+}

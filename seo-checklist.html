@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO Checklist - Noveather</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #00A878 0%, #008F68 100%);
+      color: white;
+      padding: 40px 30px;
+      text-align: center;
+    }
+    .header h1 { font-size: 2rem; margin-bottom: 10px; }
+    .header p { opacity: 0.9; }
+    .content { padding: 40px 30px; }
+    .section {
+      margin-bottom: 30px;
+      border-left: 4px solid #00A878;
+      padding-left: 20px;
+    }
+    .section h2 {
+      font-size: 1.3rem;
+      color: #00A878;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .priority {
+      display: inline-block;
+      font-weight: bold;
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      border-radius: 4px;
+      margin-left: auto;
+    }
+    .critical { background: #ff6b6b; color: white; }
+    .high { background: #ffa50d; color: white; }
+    .medium { background: #00d084; color: white; }
+    .low { background: #4dabf7; color: white; }
+    
+    .checklist {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+      background: #f8f9fa;
+      border-radius: 6px;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .checklist li:hover {
+      background: #e9ecef;
+      transform: translateX(4px);
+    }
+    .checklist input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    .checklist input[type="checkbox"]:checked ~ label {
+      text-decoration: line-through;
+      color: #999;
+    }
+    .checklist label {
+      flex: 1;
+      cursor: pointer;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+    .code-block {
+      background: #2d3748;
+      color: #68d391;
+      padding: 15px;
+      border-radius: 6px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+      margin: 10px 0;
+      border-left: 3px solid #00A878;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .stat {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .stat .number {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .stat .label {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-top: 5px;
+    }
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: #e9ecef;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 20px;
+    }
+    .progress {
+      height: 100%;
+      background: linear-gradient(90deg, #00A878 0%, #008F68 100%);
+      width: 0%;
+      transition: width 0.3s;
+    }
+    .footer {
+      background: #f8f9fa;
+      padding: 20px 30px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #e9ecef;
+    }
+    .tip {
+      background: #e7f5ff;
+      border-left: 4px solid #4dabf7;
+      padding: 12px;
+      margin: 15px 0;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      color: #0c4a6e;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>✅ Checklist SEO - Noveather</h1>
+      <p>Votre guide pour optimiser la visibilité en ligne</p>
+    </div>
+
+    <div class="content">
+      <div class="stats">
+        <div class="stat">
+          <div class="number" id="checked">0</div>
+          <div class="label">Complétées</div>
+        </div>
+        <div class="stat">
+          <div class="number" id="total">0</div>
+          <div class="label">Total à faire</div>
+        </div>
+        <div class="stat">
+          <div class="number" id="percent">0%</div>
+          <div class="label">Progression</div>
+        </div>
+      </div>
+      <div class="progress-bar">
+        <div class="progress" id="progressBar"></div>
+      </div>
+
+      <!-- PHASE 1 -->
+      <div class="section">
+        <h2>
+          🔴 Phase 1: Fondations Critiques
+          <span class="priority critical">URGENT</span>
+        </h2>
+        <ul class="checklist" id="phase1">
+          <li>
+            <input type="checkbox" id="item1">
+            <label for="item1"><strong>Installer sitemap.xml</strong><br><small>Placer le fichier à la racine du serveur et vérifier l'accès</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item2">
+            <label for="item2"><strong>Installer robots.txt</strong><br><small>Fichier à la racine, contrôle l'accès des crawlers</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item3">
+            <label for="item3"><strong>Configurer .htaccess</strong><br><small>Compression GZIP, caching, redirects HTTPS</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item4">
+            <label for="item4"><strong>Soumettre à Google Search Console</strong><br><small>https://search.google.com/search-console</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item5">
+            <label for="item5"><strong>Ajouter schéma FAQ en JSON-LD</strong><br><small>Copier seo-schema-faq.json dans une balise &lt;script&gt;</small></label>
+          </li>
+        </ul>
+        <div class="tip">
+          💡 Ces 5 tâches peuvent augmenter votre visibilité de 30-50% en 1 mois
+        </div>
+      </div>
+
+      <!-- PHASE 2 -->
+      <div class="section">
+        <h2>
+          🟠 Phase 2: Optimisation Technique
+          <span class="priority high">HAUTE</span>
+        </h2>
+        <ul class="checklist" id="phase2">
+          <li>
+            <input type="checkbox" id="item6">
+            <label for="item6"><strong>Ajouter attributs alt sur toutes les images</strong><br><small>Exemple: alt="Création site web Guadeloupe"</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item7">
+            <label for="item7"><strong>Convertir images en WebP</strong><br><small>Économise 30-50% de bande passante</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item8">
+            <label for="item8"><strong>Ajouter srcset responsive</strong><br><small>Adapter la résolution à chaque écran</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item9">
+            <label for="item9"><strong>Ajouter favicon.ico</strong><br><small>Améliore la marque et la confiance</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item10">
+            <label for="item10"><strong>Configurer Google Analytics 4</strong><br><small>Tracker le trafic et les conversions</small></label>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PHASE 3 -->
+      <div class="section">
+        <h2>
+          🟡 Phase 3: Contenu & Mots-Clés
+          <span class="priority medium">MOYENNE</span>
+        </h2>
+        <ul class="checklist" id="phase3">
+          <li>
+            <input type="checkbox" id="item11">
+            <label for="item11"><strong>Enrichir le contenu (300+ mots par section)</strong><br><small>Intégrer les mots-clés naturellement</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item12">
+            <label for="item12"><strong>Ajouter balises H2/H3 pertinentes</strong><br><small>Structurer avec des en-têtes hiérarchiques</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item13">
+            <label for="item13"><strong>Optimiser les titles et descriptions</strong><br><small>Meta title < 60 caractères, description < 160</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item14">
+            <label for="item14"><strong>Créer des pages de service ciblées</strong><br><small>site-web-guadeloupe.html, google-business-guadeloupe.html</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item15">
+            <label for="item15"><strong>Ajouter maillage interne (internal linking)</strong><br><small>Lier les pages entre elles avec ancres pertinentes</small></label>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PHASE 4 -->
+      <div class="section">
+        <h2>
+          🔵 Phase 4: Présence Locale
+          <span class="priority low">IMPORTANTE</span>
+        </h2>
+        <ul class="checklist" id="phase4">
+          <li>
+            <input type="checkbox" id="item16">
+            <label for="item16"><strong>Configurer Google My Business</strong><br><small>https://www.google.com/business/ - Vérifier votre fiche</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item17">
+            <label for="item17"><strong>Ajouter horaires et services sur GMB</strong><br><small>Inclure photos, descriptions détaillées</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item18">
+            <label for="item18"><strong>Créer listing sur annuaires locaux</strong><br><small>Pages Jaunes, Yelp, Facebook</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item19">
+            <label for="item19"><strong>Ajouter schéma LocalBusiness complet</strong><br><small>Copier seo-schema-services.json</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item20">
+            <label for="item20"><strong>Demander avis clients sur Google</strong><br><small>Plus d'avis = meilleur ranking local</small></label>
+          </li>
+        </ul>
+      </div>
+
+      <!-- PHASE 5 -->
+      <div class="section">
+        <h2>
+          ⚙️ Phase 5: Configuration Avancée
+          <span class="priority low">BONUS</span>
+        </h2>
+        <ul class="checklist" id="phase5">
+          <li>
+            <input type="checkbox" id="item21">
+            <label for="item21"><strong>Tester avec Google PageSpeed Insights</strong><br><small>https://pagespeed.web.dev - Target: 90+</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item22">
+            <label for="item22"><strong>Implémenter lazy loading images</strong><br><small>loading="lazy" sur les images</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item23">
+            <label for="item23"><strong>Minifier CSS et JavaScript</strong><br><small>Réduire la taille des fichiers</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item24">
+            <label for="item24"><strong>Ajouter breadcrumbs structurés</strong><br><small>Améliore la navigation et le SEO</small></label>
+          </li>
+          <li>
+            <input type="checkbox" id="item25">
+            <label for="item25"><strong>Configurer monitoring SEO</strong><br><small>Suivi rankings, trafic, conversions</small></label>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>📞 Support & Ressources</h2>
+        <p style="margin-bottom: 15px;">
+          Pour des questions sur l'implémentation, consultez le guide complet: <strong>SEO-GUIDE.md</strong>
+        </p>
+        <div class="tip">
+          📧 Email: contact@noveather.fr<br>
+          📱 Téléphone: +590 691 27 54 57<br>
+          🌐 Site: https://noveather.fr
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Checklist SEO - Noveather v2 | Mise à jour: 2026-06-17</p>
+      <p>Sauvegardez cette page pour un suivi régulier de votre optimisation SEO</p>
+    </div>
+  </div>
+
+  <script>
+    const allCheckboxes = document.querySelectorAll('.checklist input[type="checkbox"]');
+    const totalSpan = document.getElementById('total');
+    const checkedSpan = document.getElementById('checked');
+    const percentSpan = document.getElementById('percent');
+    const progressBar = document.getElementById('progressBar');
+
+    totalSpan.textContent = allCheckboxes.length;
+
+    function updateProgress() {
+      const checkedCount = Array.from(allCheckboxes).filter(cb => cb.checked).length;
+      const percentage = Math.round((checkedCount / allCheckboxes.length) * 100);
+      
+      checkedSpan.textContent = checkedCount;
+      percentSpan.textContent = percentage + '%';
+      progressBar.style.width = percentage + '%';
+
+      // Sauvegarder dans localStorage
+      allCheckboxes.forEach((cb, index) => {
+        localStorage.setItem(`seo-checkbox-${index}`, cb.checked);
+      });
+    }
+
+    // Restaurer l'état des cases depuis localStorage
+    allCheckboxes.forEach((cb, index) => {
+      const saved = localStorage.getItem(`seo-checkbox-${index}`);
+      if (saved === 'true') {
+        cb.checked = true;
+      }
+      cb.addEventListener('change', updateProgress);
+    });
+
+    // Initialiser
+    updateProgress();
+  </script>
+</body>
+</html>

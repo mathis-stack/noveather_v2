@@ -1,0 +1,25 @@
+/* HUMANS.TXT */
+
+/* THE TEAM */
+  Developer: Mathis Stack
+  Contact: contact@noveather.fr
+  Twitter: @noveatherguadeloupe
+  Location: Guadeloupe, France
+
+/* THE SITE */
+  Name: Noveather
+  Description: Agence Digitale spécialisée en création de sites web, référencement local, et automatisations WhatsApp
+  URL: https://noveather.fr
+  Standards: HTML5, CSS3, JavaScript
+  Components: DM Sans, DM Serif Display
+  Built with: Passion for digital transformation
+
+/* THANKS */
+  Google Fonts - Font Library
+  Schema.org - Structured Data Standards
+
+/* SOCIAL */
+  Website: https://noveather.fr
+  Email: contact@noveather.fr
+  Phone: +590 691 27 54 57
+  Location: Guadeloupe

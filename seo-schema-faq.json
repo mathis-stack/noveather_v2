@@ -1,0 +1,78 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "@id": "https://noveather.fr/#faq-1",
+      "name": "Combien de temps pour créer un site web en Guadeloupe ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Chez Noveather, nous livrons votre site web professionnel en 3 à 7 jours en Guadeloupe. Notre processus accéléré combine design, développement et mise en ligne sans compromis sur la qualité. Tous nos sites incluent l'optimisation SEO et la fiche Google Business."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://noveather.fr/#faq-2",
+      "name": "Pourquoi choisir une agence digitale locale en Guadeloupe ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Noveather comprend le marché local guadeloupéen et offre un service clé en main adapté aux PME et commerces indépendants. Nous sommes basés en Guadeloupe, avec support local et responsive. Nos solutions incluent sites web, Google Business, et chatbots WhatsApp pour automatiser vos ventes."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://noveather.fr/#faq-3",
+      "name": "Quel est le coût pour optimiser mon référencement local Google ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nos packs commencent à partir de tarifs compétitifs. Vous recevez un audit gratuit de votre présence digitale pour déterminer le pack idéal. Tous nos services incluent l'optimisation Google Business et la fiche locale pour la Guadeloupe."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://noveather.fr/#faq-4",
+      "name": "Comment fonctionne le chatbot WhatsApp ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Notre chatbot WhatsApp automatise vos conversations clients 24/7. Il répond aux questions fréquentes, qualifie les prospects, et prend les rendez-vous. Vous restez maître de vos messages et pouvez intervenir quand vous le souhaitez. Intégration simple et rapide en Guadeloupe."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://noveather.fr/#faq-5",
+      "name": "Que comprend le pack 'Présence Digitale Complète' ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le pack Présence Digitale Complète inclut : site web professionnel, fiche Google Business optimisée, chatbot WhatsApp, audit de compétiteurs, QR codes et cartes NFC. C'est la solution tout-en-un pour les commerces en Guadeloupe qui veulent une visibilité maximale."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://noveather.fr/#faq-6",
+      "name": "Est-ce que mon site sera mobile-friendly ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Absolument. Tous les sites Noveather sont 100% responsive et optimisés mobile. Nous testons sur tous les appareils pour garantir une parfaite expérience utilisateur. Votre site sera rapide, sécurisé et optimisé pour Google."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://noveather.fr/#faq-7",
+      "name": "Offrez-vous du support après la création du site ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, nous incluons un support technique 30 jours après la livraison. Nous proposons également des forfaits de maintenance mensuelle pour les mises à jour, sauvegardes et optimisations continues de votre site."
+      }
+    },
+    {
+      "@type": "Question",
+      "@id": "https://noveather.fr/#faq-8",
+      "name": "Comment commencer avec Noveather ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "C'est simple ! Remplissez notre formulaire de contact ou appelez-nous au +590 691 27 54 57. Nous répondons en moins de 24h avec un audit gratuit et des recommandations personnalisées pour votre présence digitale en Guadeloupe."
+      }
+    }
+  ]
+}

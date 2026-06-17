@@ -1,0 +1,226 @@
+<!-- SECURITY & RESPONSIVE IMPROVEMENTS FOR NOVEATHER -->
+<!-- À ajouter dans le <head> de noveather-site_1.html -->
+
+<!-- ============================================
+     SECURITY META TAGS
+     ============================================ -->
+
+<!-- Strict HTTPS enforcement -->
+<meta http-equiv="Strict-Transport-Security" content="max-age=63072000; includeSubDomains; preload">
+
+<!-- Content Security Policy - Prevents XSS -->
+<meta http-equiv="Content-Security-Policy" content="
+  default-src 'self';
+  script-src 'self' https://fonts.googleapis.com https://www.googletagmanager.com https://www.google-analytics.com 'unsafe-inline';
+  style-src 'self' https://fonts.googleapis.com 'unsafe-inline';
+  img-src 'self' data: https: *.noveather.fr;
+  font-src 'self' https://fonts.gstatic.com data:;
+  connect-src 'self' https://www.google-analytics.com;
+  frame-ancestors 'none';
+  base-uri 'self';
+  form-action 'self' https://formspree.io;
+  upgrade-insecure-requests;">
+
+<!-- Prevent MIME type sniffing -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!-- Browser Compatibility -->
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+<!-- Disable CORS -->
+<meta http-equiv="Access-Control-Allow-Origin" content="*">
+
+<!-- ============================================
+     RESPONSIVE MEDIA QUERIES CSS
+     ============================================ -->
+
+<style>
+  /* TABLET BREAKPOINT (768px to 1024px) */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 0.85rem; }
+    
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .packs-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .process-steps { grid-template-columns: repeat(2, 1fr); }
+    .testimonials-grid { grid-template-columns: repeat(2, 1fr); }
+    
+    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    
+    .about-inner { grid-template-columns: 1fr; gap: 40px; }
+    .about-text h2 { font-size: 2rem; }
+  }
+
+  /* MOBILE BREAKPOINT (below 768px) */
+  @media (max-width: 768px) {
+    /* Navigation */
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .nav-inner { height: 64px; padding: 0 16px; }
+    
+    /* Hero Section */
+    #hero {
+      padding: 100px 16px 60px;
+    }
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    .hero-sub { max-width: 100%; }
+    .hero-reassurance { font-size: 0.75rem; }
+    
+    /* General Sections */
+    .section { padding: 60px 16px; }
+    .container { padding: 0 16px; }
+    
+    /* Grid Adjustments */
+    .services-grid { grid-template-columns: 1fr; gap: 20px; }
+    .packs-grid { grid-template-columns: 1fr; gap: 20px; }
+    .stats-grid { grid-template-columns: 1fr; gap: 16px; }
+    .process-steps { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; gap: 20px; }
+    
+    /* Process Section - Hide line on mobile */
+    .process-line { display: none; }
+    .process-step { padding: 0; }
+    .process-step p { text-align: left; }
+    
+    /* Form */
+    .contact-inner { grid-template-columns: 1fr; gap: 30px; }
+    .form-row { grid-template-columns: 1fr; gap: 12px; }
+    
+    /* About Section */
+    .about-inner { grid-template-columns: 1fr; gap: 30px; }
+    
+    /* Typography */
+    h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); }
+    h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+    h3 { font-size: clamp(1rem, 2vw, 1.2rem); }
+    
+    .section-subtitle { max-width: 100%; }
+    
+    /* CTA Final */
+    #cta-final { padding: 60px 16px; }
+    #cta-final h2 { max-width: 100%; }
+    #cta-final p { max-width: 100%; }
+  }
+
+  /* SMALL MOBILE BREAKPOINT (below 480px) */
+  @media (max-width: 480px) {
+    .hero-badge { font-size: 0.7rem; }
+    .hero-btns { flex-direction: column; }
+    .btn { padding: 12px 20px; font-size: 0.9rem; }
+    .btn-lg { padding: 14px 28px; }
+    
+    .stat-number { font-size: 2.4rem; }
+    .stat-label { font-size: 0.8rem; }
+    
+    .service-card h3 { font-size: 1rem; }
+    .service-card p { font-size: 0.85rem; }
+    
+    .step-number { width: 48px; height: 48px; font-size: 1rem; }
+    
+    .pack-card h3 { font-size: 1.1rem; }
+    .pack-card > p { font-size: 0.85rem; }
+    
+    .contact-info { padding-top: 0; }
+    
+    .about-highlights { gap: 12px; }
+    .highlight-icon { width: 32px; height: 32px; }
+    
+    .trust-badges { gap: 16px; flex-direction: column; }
+  }
+
+  /* LANDSCAPE MODE */
+  @media (max-height: 600px) and (orientation: landscape) {
+    #navbar { height: 56px; }
+    #hero { padding: 80px 24px 60px; }
+    .hero-inner { gap: 32px; }
+  }
+</style>
+
+<!-- ============================================
+     FORM SECURITY & ACCESSIBILITY
+     ============================================ -->
+
+<style>
+  /* Input security enhancements */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  textarea,
+  select {
+    /* Prevent autofill styling */
+    -webkit-autofill-background-clip: text;
+    -webkit-text-fill-color: var(--text);
+  }
+
+  /* Remove browser default input styling */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Accessibility: Focus visible */
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* Prevent zooming on input focus (iOS) */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea,
+  select {
+    font-size: 16px;
+  }
+</style>
+
+<!-- ============================================
+     RECOMMENDED ADDITIONAL IMPROVEMENTS
+     ============================================ -->
+
+<!--
+NEXT STEPS TO IMPLEMENT:
+
+1. ADD TO FORM INPUTS:
+   - autocomplete="off" or specific autocomplete values
+   - required attribute for mandatory fields
+   - pattern attribute for validation
+   - maxlength for text inputs
+   - inputmode="tel" for phone fields
+
+   Example:
+   <input type="email" name="email" required autocomplete="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" placeholder="votre@email.com">
+
+2. ADD ARIA LABELS:
+   <label for="email">Email *</label>
+   <input type="email" id="email" name="email" required>
+
+3. IMPLEMENT CSRF PROTECTION:
+   <input type="hidden" name="csrf_token" value="token_here">
+
+4. ADD RATE LIMITING:
+   - Limit form submissions (max 1 per minute)
+   - Implement CAPTCHA for production
+
+5. SERVER-SIDE VALIDATION:
+   - Always validate server-side
+   - Sanitize all inputs
+   - Use prepared statements
+
+6. IMPLEMENT SUBRESOURCE INTEGRITY (SRI):
+   <link rel="stylesheet" href="..." integrity="sha384-...">
+   <script src="..." integrity="sha384-..."></script>
+
+7. ADD MONITORING:
+   - Log security events
+   - Monitor for unusual activity
+   - Set up alerts for potential attacks
+-->
